@@ -1,0 +1,74 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body, main{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    width:100%;
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-left: 3rem;
+}
+
+
+.search_box{
+    width:30%;
+}
+
+.search{
+    padding:10px;
+    width:100%;
+}
+
+.header_text{
+    color:white;
+    text-decoration: none;
+    font-size:1.2rem;
+}
+
+.listing{
+    background-color:white;
+    padding:0.5rem;
+    text-decoration: none;
+    color:black;
+    font-size:1.2rem;
+    margin-right: 3rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .nav_item {
+            margin-top: 50px;
+            font-size: 30px;
+            text-align: center;
+            color: blue;
+            text-decoration: none;
+        }
+        .nav_list a {
+            color: blue;
+            text-decoration: none;
+        }
+        .logout_button {
+            border: none;
+            font-size: 30px;
+            background: rgb(219, 218, 218);
+            ;
+        }
+}

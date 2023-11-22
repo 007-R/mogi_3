@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+
+
+
+
+.logout_button{
+    border:none;
+    font-size: 50px;
+    background: rgb(219, 218, 218);;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .nav_item {
+            margin-top: 50px;
+            font-size: 30px;
+            text-align: center;
+            color: blue;
+            text-decoration: none;
+        }
+        .nav_list a {
+            color: blue;
+            text-decoration: none;
+        }
+        .logout_button {
+            border: none;
+            font-size: 30px;
+            background: rgb(219, 218, 218);
+            ;
+        }
+}
