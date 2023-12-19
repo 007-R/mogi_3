@@ -12,13 +12,14 @@
 
 <body>
     <header class="header">
-        <div class='logo'>
-            <p>COACHTECH</p>
+        <div class='logo_area'>
+            <a href='/'><img class='logo' src="{{ asset('storage/icon/CoachTech.jpg') }}" alt='logo_image'></a>
         </div>
         <div class='search_box'>
-            <form>
+            <form method='post' action='/search'>
             @csrf
-            <input type='text' class='search' placeholder='何をお探しですか？'>
+            <input type='text' class='search' name='keyword' placeholder='何をお探しですか？'>
+            </form>
         </div>
         @guest
             <div class='login_box'>
@@ -33,11 +34,14 @@
                 <a href='/mypage' class='header_text'>マイページ</a>
             </div>
             <div class='logout_box'>
-                <a href='/mypage' class='header_text'>マイページ</a>
+                <form class="form" action="/logout" method="post">
+                    @csrf
+                    <button class="header_text">ログアウト</button>
+                </form>
             </div>
         @endauth
         <div class='listing_box'>
-            <a href='listing' class='listing'>出品</a>
+            <a href='/sell' class='listing'>出品</a>
         </div>
     </header>
 </body>

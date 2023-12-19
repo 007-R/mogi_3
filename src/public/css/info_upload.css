@@ -1,0 +1,98 @@
+.input_form{
+    width:50%;
+    margin:3rem auto;
+}
+
+.title{
+    text-align: center;
+}
+
+.sub_title{
+    position: relative;
+    top: 0;
+    left: 0;color:gray;
+    width:100%;
+}
+
+.sub_title::before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.profile_image{
+    display:flex;
+    justify-content: start;
+    width:100%;
+}
+
+.profile_circle{
+    width:8rem;
+    background-color:gray;
+    border-radius:8rem 8rem;
+    height:8rem;
+}
+
+.image_upload{
+    border:1px black dashed;
+    padding:3rem 5rem;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.button_area{
+    text-align: center;
+    border:1px blue solid;
+    display:flex;
+    align-items:center;
+}
+
+.upload_button{
+    padding: 1rem 3rem;
+    color: rgba(255, 0, 0, 0.779);
+    border: rgba(255, 0, 0, 0.779) 1px solid;
+    border-radius: 1rem;
+    cursor: pointer;
+    height:3.5rem;
+    font-weight: bold;
+
+}
+
+.preview_image{
+    width:50%;
+    margin-top:3rem;
+}
+
+select, input{
+    width:100%;
+    padding:0.5rem;
+}
+
+.description{
+    height:5rem;
+}
+
+
+.action_button{
+    width:100%;
+    padding:0 1rem;
+    color:white;
+    background-color: rgba(255, 0, 0, 0.779);
+    border: radius 0.5rem;
+    font-size:1.5rem;
+    border:none;
+    margin:2rem 0rem;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+
+}

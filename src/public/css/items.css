@@ -1,38 +1,50 @@
-html {
-    box-sizing: border-box;
-    font-size: 16px;
+.tab-area {
+    width:30%;
+    display: flex;
+    cursor: pointer;
+}
+
+hr{
+    margin-top:-2rem;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    width: calc(100%/2);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.tab.active {
+    color:rgba(255, 0, 0, 0.779);
+}
+
+.panel {
+    display: none;
+    text-align: center;
+}
+
+.panel.active {
+    display: block;
 }
 
 
-
-
-
-
-.logout_button{
-    border:none;
-    font-size: 50px;
-    background: rgb(219, 218, 218);;
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0px auto;
+    flex-wrap: wrap;
 }
 
+.item_img {
+    width: 12rem;
+    height: 12rem;
+    margin-left:1rem;
+}
 
 
 @media screen and (max-width: 768px) {
 
-    .nav_item {
-            margin-top: 50px;
-            font-size: 30px;
-            text-align: center;
-            color: blue;
-            text-decoration: none;
-        }
-        .nav_list a {
-            color: blue;
-            text-decoration: none;
-        }
-        .logout_button {
-            border: none;
-            font-size: 30px;
-            background: rgb(219, 218, 218);
-            ;
-        }
+
 }

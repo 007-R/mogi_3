@@ -1,0 +1,61 @@
+.info{
+    display:flex;
+    justify-content: space-between;
+    margin:3rem auto;
+    width:90%;
+}
+
+.basic_info{
+    width:60%;
+    border:solid 1px red;
+}
+
+.side_info{
+    width:30%;
+    border: solid 1px red;
+}
+
+.item_info{
+    width:50%;
+    display:flex;
+    justify-content: space-around;
+    margin:3rem 0px;
+    border:1px red solid;
+}
+
+.item_img{
+    width:5rem;
+    height:5rem;
+}
+
+.payment_info, .shipping_info{
+    width:80%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.confirmation_table{
+    width:100%;
+    border:1px black solid;
+    margin-bottom:3rem;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding:1rem;
+}
+
+.purchase_button{
+    width:100%;
+    padding:0 1rem;
+    color:white;
+    background-color: rgba(255, 0, 0, 0.779);
+    border: radius 0.5rem;
+    font-size:1.5rem;
+    border:none;
+}
+
+@media screen and (max-width: 768px) {
+
+
+}
