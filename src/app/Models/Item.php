@@ -15,12 +15,18 @@ class Item extends Model
         'image',
         'description',
         'brand_id',
+        'shipping_id',
         'color_id',
         'sex_category_id',
         'genre_category_id',
         'state_id',
-        'user_id'
+        'user_id',
+        'master_id'
     ];
+    public function shipping()
+    {
+        return $this->belongsTo(Shipping::class);
+    }
     public function color()
     {
         return $this->belongsTo(Color::class);
@@ -48,6 +54,10 @@ class Item extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function master()
+    {
+        return $this->belongsTo(Master::class);
     }
     public function scopeKeywordSearch($query, $keyword)
     {

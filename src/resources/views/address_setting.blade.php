@@ -12,14 +12,21 @@
     <form class='login-form' method='get' action='/purchase/set/address/{{$item_id}}'>
         @csrf
         <input type='hidden' name='user_id' value='{{Auth::id()}}'>
+        <input type='hidden' name='payment_id' value='{{ $payment_id }}'>
             <h3>郵便番号</h3>
             <div class='input_area'>
                 <input name='postcode' value='ダミー'>
             </div>
+            @error('postcode')
+            {{ $message }}
+            @enderror
             <h3>住所</h3>
             <div class='input_area'>
                 <input name='address' value='ダミー'>
             </div>
+            @error('address')
+            {{ $message }}
+            @enderror
             <h3>建物名</h3>
             <div class='input_area'>
                 <input name='building' type='text' value='マンション' placeholder='マンション'>

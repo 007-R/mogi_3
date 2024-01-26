@@ -7,7 +7,11 @@
 @section('content')
 <div class='input_form'>
     <div class='title'>
-        <h1>商品の出品</h1>
+        @if(isset($shop_name))
+            <h1>{{ $shop_name->name }}への出品</h1>
+        @else
+            <h1>商品の出品</h1>
+        @endif
     </div>
     <form class='login-form' method='post' action='/sell' enctype="multipart/form-data">
         @csrf
@@ -22,6 +26,11 @@
                 <img id="preview" class='preview_image'
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
             </div>
+        </div>
+        <div class='error_message'>
+        @error('image')
+        {{ $message }}
+        @enderror
         </div>
         <h2 class='sub_title'>商品の説明</h2>
         <div class=''>
@@ -65,22 +74,47 @@
                     @endforeach
                 </select>
             </div>
+            <h3>出荷情報</h3>
+            <div class='select_area'>
+                <select name='shipping_id'>
+                    @foreach($shippings as $shipping)
+                    <option value='{{$shipping->id}}'>{{$shipping->description}}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
         <h2 class='sub_title'>商品名と説明</h2>
             <h3>商品名</h3>
             <div class='input_area'>
-                <input name='name' value='ダミー'>
+                <input name='name'>
+            </div>
+            <div class='error_message'>
+            @error('name')
+            {{ $message }}
+            @enderror
             </div>
             <h3>商品の説明</h3>
             <div class='input_area'>
-                <input class='description' name='description' value='ダミー'>
+                <input class='description' name='description'>
+            </div>
+            <div class='error_message'>
+            @error('description')
+            {{ $message }}
+            @enderror
             </div>
             <h2 class='sub_title'>販売価格</h2>
             <h3>販売価格</h3>
             <div class='input_area'>
-                <input name='price' type='number' value='1000' placeholder='¥'>
+                <input name='price' type='number' placeholder='¥'>
             </div>
-
+            <div class='error_message'>
+            @error('price')
+            {{ $message }}
+            @enderror
+            </div>
+            @if(isset($shop_name))
+            <input type='hidden' name='master_id' value='{{ $shop_name->id }}'>
+            @endif
         <div class='button'>
             <button type='submit' class='action_button'>出品する</button>
         </div>

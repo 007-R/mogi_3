@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+@if(session('message'))
+<p class='message'>{{ session('message') }}</p>
+@endif
 <div class='input_form'>
     <div class='title'>
         <h1>プロフィール設定</h1>
@@ -26,19 +29,37 @@
         </div>
             <h3>ユーザー名</h3>
             <div class='input_area'>
-                <input name='user_name' value='onodera'>
+                <input name='user_name' value="{{ $user_info->name }}">
             </div>
             <h3>郵便番号</h3>
             <div class='input_area'>
-                <input name='postcode' value='0200834'>
+                @if($user_info->address_id )
+                <input name='postcode' value="{{ $user_info->address->postcode }}">
+                @else
+                <input name='postcode'>
+                @endif
             </div>
+            @error('postcode')
+            <span class='error_message'>{{ $message }}</span>
+            @enderror
             <h3>住所</h3>
             <div class='input_area'>
-                <input name='main' value='盛岡市永井'>
+                @if($user_info->address_id )
+                <input name='address' value="{{ $user_info->address->address }}">
+                @else
+                <input name='address' type='text'>
+                @endif
             </div>
+            @error('address')
+            <span class='error_message'>{{ $message }}</span>
+            @enderror
             <h3>建物名</h3>
             <div class='input_area'>
-                <input name='building' type='text' value='永井ビルディング'>
+                @if($user_info->address_id )
+                <input name='building' type='text' value="{{ $user_info->address->building }}">
+                @else
+                <input name='building' type='text'>
+                @endif
             </div>
 
         <div class='button'>

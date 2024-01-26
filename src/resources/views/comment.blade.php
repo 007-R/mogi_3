@@ -31,14 +31,22 @@
         </div>
         <div class='comment_history'>
             @foreach($comments as $comment)
-                @if( $comment -> user_id == $item -> user_id)
+                @if( $comment -> user_id == Auth::id())
                     <div class='owner'>
+                        @if($comment->user->name)
                         <span >{{ $comment->user->name }}</span>
+                        @else
+                        <span>名称未登録</span>
+                        @endif
                         <form method='post' action='/item/{{$item->id}}/comment/delete'>
                         @csrf
                         <input type='hidden' name='comment_id' value="{{ $comment->id }}">
                         <input type='hidden' name='item_id' value="{{ $comment->item_id }}">
+                        @if($comment->user->name)
                         <input type='image' class='user_img' src="{{ asset($comment->user->image) }}" alt='user_img'>
+                        @else
+                        <input type='submit' class='user_img' value=''>
+                        @endif
                         </form>
                     </div>
                     <p class='comment_content'>{{ $comment->content }}</p>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ItemRequest;
 use App\Models\Item;
 use App\Models\State;
 use App\Models\GenreCategory;
@@ -13,6 +14,8 @@ use App\Models\Color;
 use App\Models\Favorite;
 use App\Models\Comment;
 use App\Models\Purchase;
+use App\Models\Master;
+use App\Models\Shipping;
 
 
 class ItemController extends Controller
@@ -37,6 +40,18 @@ class ItemController extends Controller
         return view("items", compact("items", "favorite_items"));
     }
 
+    public function shop_index($id)
+    {
+        $sold_items = Purchase::get('item_id')->toArray();
+        $sold_items_id = [];
+        foreach ($sold_items as $item) {
+            $sold_items_id[] = $item['item_id'];
+        }
+        $items = Item::whereNotIn('id', $sold_items_id)->orderBy('created_at', 'desc')->where('master_id', $id)->get();
+        $shop_name = Master::find($id);
+
+        return view("shop_items", compact("items", "shop_name"));
+    }
     public function search(Request $request)
     {
         $sold_items = Purchase::get('item_id')->toArray();
@@ -58,7 +73,7 @@ class ItemController extends Controller
     }
     public function detail($id)
     {
-        $item = Item::with(['brand', 'color', 'state', 'sex_category', 'genre_category'])->find($id);
+        $item = Item::with(['brand', 'color', 'state', 'sex_category', 'genre_category', 'shipping'])->find($id);
         if (Favorite::where('user_id', Auth::id())->where('item_id', $id)->get()->isEmpty()) {
             $favorite = False;
         } else {
@@ -77,9 +92,22 @@ class ItemController extends Controller
         $genre_categories = GenreCategory::all();
         $sex_categories = SexCategory::all();
         $brands = Brand::all();
-        return view("sell", compact("states", 'genre_categories','sex_categories', 'brands', 'colors'));
+        $shippings = Shipping::all();
+        return view("sell", compact("states", 'genre_categories','sex_categories', 'brands', 'shippings', 'colors'));
     }
-    public function sell_register(Request $request)
+    public function shop_sell($id)
+    {
+        $shop_name = Master::find($id);
+        $states = State::all();
+        $colors = Color::all();
+        $genre_categories = GenreCategory::all();
+        $sex_categories = SexCategory::all();
+        $brands = Brand::all();
+        $shippings = Shipping::all();
+        return view("sell", compact("states", 'genre_categories', 'sex_categories', 'brands', 'shippings','colors', 'shop_name'));
+    }
+
+    public function sell_register(ItemRequest $request)
     {
         $time = \Carbon\Carbon::now();
 
@@ -88,6 +116,7 @@ class ItemController extends Controller
         Item::latest()->first()->update(['image' => "storage/img/" . $time . ".jpg"]);
         return redirect('/');
     }
+
     public function favorite(Request $request)
     {
         $user_id = Auth::id();

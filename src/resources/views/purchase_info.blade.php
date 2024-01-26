@@ -24,7 +24,7 @@
                 @csrf
                 <input type='hidden' name='payment_id' value='{{ $payment->id }}'>
                 <input type='hidden' name='address_id' value='{{ $address->id }}'>
-                <button class='purchase_button' type='submit'>変更する</button>
+                <button class='change_button' type='submit'>変更する</button>
             </form>
         </div>
         <div>
@@ -38,7 +38,7 @@
                 @csrf
                 <input type='hidden' name='payment_id' value='{{ $payment->id }}'>
                 <input type='hidden' name='address_id' value='{{ $address->id }}'>
-                <button class='purchase_button' type='submit'>変更する</button>
+                <button class='change_button' type='submit'>変更する</button>
             </form>
             <input type='hidden' name='address_id' value="{{$address -> id}}">
         </div>
@@ -52,7 +52,7 @@
         <table class='confirmation_table'>
             <tr><td>商品代金</td><td>¥{{ $item->price }}</td></tr>
             <tr><td>支払い金額</td><td>¥{{ $item->price }}</td></tr>
-            <tr><td>支払い方法</td><td></td></tr>
+            <tr><td>支払い方法</td><td>{{ $payment -> name }}</td></tr>
         </table>
         <form method='post' action='/purchase/order/{{$item->id}}'>
             @csrf
@@ -65,7 +65,4 @@
         </form>
     </div>
 </div>
-
-<p>{{request() -> address_id }}</p>
-<p>{{request() -> payment_id }}</p>
 @endsection

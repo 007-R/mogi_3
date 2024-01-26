@@ -21,10 +21,12 @@ class CreateItemsTable extends Migration
             $table->string('description');
             $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->foreignId('color_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('shipping_id')->constrained()->cascadeOnDelete();
             $table->foreignId('sex_category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('genre_category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('state_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('master_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

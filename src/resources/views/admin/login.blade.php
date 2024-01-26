@@ -7,12 +7,12 @@
 @section('content')
 <div class='input_form'>
     <div class='title'><h2>管理者ログイン</h2></div>
-    <form class='login-form' method='post' action='/login'>
+    <form class='login-form' method='post' action='/admin/login'>
         @csrf
         <div class='input_space'>
         <div class='email_input'>
             <p class='sub_title'>管理者ID</p>
-            <input name='email' type='email' placeholder='ID', >
+            <input name='name' placeholder='name'>
         </div>
         </div>
         <div class="form__error">

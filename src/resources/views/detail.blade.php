@@ -54,8 +54,9 @@
         <p>カラー：{{ $item->color->name }}</p>
         <p>{{ $item->state->name }}</p>
         <p>{{ $item->state->description }}</p>
+        <p>{{ $item -> shipping -> description}}</p>
         <h2>商品の情報</h2>
-        <div class='c'>
+        <div class='categories'>
             <p class='sub_title'>カテゴリー：</p>
             <p class='category'>{{ $item->genre_category->name }}</p>
             <p class='category'>{{ $item->sex_category->name }}</p>

@@ -29,6 +29,10 @@ input{
     margin:2rem 0rem;
 }
 
+.form__error{
+    color:red;
+}
+
 .link{
     text-align: center;
 }
@@ -36,5 +40,9 @@ input{
 
 @media screen and (max-width: 768px) {
 
+.input_form {
+        width: 80%;
+        margin: 3rem auto;
+}
 
 }

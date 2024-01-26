@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use DateTime;
 
-class AddressTableSeeder extends Seeder
+class AdminsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,11 @@ class AddressTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'postcode' => '0200834',
-            'address' => '盛岡市永井',
-            'building' => '〇〇ビル',
+            'name' => 'admin',
+            'password' => \Hash::make('password'),
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ];
-        DB::table('addresses')->insert($param);
+        DB::table('admins')->insert($param);
     }
 }

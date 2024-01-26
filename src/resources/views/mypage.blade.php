@@ -20,6 +20,7 @@
 <ul class="tab-area">
     <p class="tab active">出品した商品</p>
     <p class="tab">購入した商品</p>
+    <p class="tab">ショップ</p>
 </ul>
 <hr>
 
@@ -35,7 +36,6 @@
         </div>
     </div>
     <div class="panel">
-        @if(Auth::check())
         <div class='gallery'>
             @foreach($purchase_items as $p_item)
             <div class='item_image'>
@@ -43,10 +43,36 @@
             </div>
             @endforeach
         </div>
-        @else
-        @endif
+    </div>
+    <div class="panel">
+        <h2>開設中ショップ一覧</h2>
+        <table class='shop_info'>
+            <tr><th>ショップ名</th><th>出品</th></tr>
+            @foreach($masters as $master)
+            <tr><td>{{ $master -> name}}</td>
+            <td><a href='/sell/{{ $master -> id }}'>URL</a></td></tr>
+            @endforeach
+        </table>
+        <h2>ショップの新規開設</h2>
+        <form method='post' action='/mypage/shop'>
+            @csrf
+            <p>ショップ名：<input type='text' name='name'></p>
+            <p>パスワード：<input type='text' name='password'></p>
+            <input type='hidden' name='user_id' value='{{ Auth::id() }}'>
+            <button type='submit'>新規開設</button>
+        </form>
+        <h2>ショップ代表者のログイン</h2>
+        <a href='/master/login'>click here!</a>
+        <h2>スタッフを務めるショップ</h2>
+                <table class='shop_info'>
+                    <tr><th>ショップ名</th><th>出品</th><th>商品一覧</th></tr>
+                    @foreach($staff as $member)
+                    <tr><td>{{ $member -> master -> name}}</td><td><a href='/sell/{{ $member -> master -> id }}'>URL</a></td><td><a href='/shop/{{ $member -> master -> id }}'>URL</a></td></tr>
+                    @endforeach
     </div>
 </div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>

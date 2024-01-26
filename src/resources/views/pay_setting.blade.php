@@ -14,7 +14,7 @@
             <label>{{ $payment -> name }}</label>
         <div>
         @endforeach
-        <input type='hidden' name='address_id' value=1>
+        <input type='hidden' name='address_id' value="{{ $address_id}}">
     <button class='purchase_button' type='submit'>更新する</button>
     </form>
 </div>

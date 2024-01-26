@@ -3,6 +3,12 @@
     margin:3rem auto;
 }
 
+.message{
+    background-color: red;
+    color:white;
+    padding:1rem;
+}
+
 .title{
     text-align: center;
 }
@@ -48,7 +54,6 @@ input[type="file"] {
 
 .button_area{
     text-align: center;
-    border:1px blue solid;
     display:flex;
     align-items:center;
 }
@@ -61,7 +66,7 @@ input[type="file"] {
     cursor: pointer;
     height:3.5rem;
     font-weight: bold;
-
+    margin-left:3rem;
 }
 
 .preview_image{
@@ -90,9 +95,14 @@ select, input{
     margin:2rem 0rem;
 }
 
-
+.error_message{
+    color:red;
+}
 
 @media screen and (max-width: 768px) {
-
+.input_form {
+        width: 80%;
+        margin: 3rem auto;
+    }
 
 }
