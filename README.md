@@ -1,7 +1,5 @@
 # mogi_3
 
-#環境構築
-
 #アプリケーション名
 
 メルカリ風アプリ
@@ -28,7 +26,7 @@ http://127.0.0.1
 商品お気に入り追加
 商品お気に入り削除
 商品コメント追加
-商品コメント削除
+商品コメント削除（自分のアイコンクリック）
 出品
 購入
 配送先変更
@@ -44,7 +42,9 @@ laravel8.83.27
 
 ２ vendorファイルインストール(composer update(phpコンテナ内） * エラー発生時は「--ignore-platform-req=ext-gd」追加して実行)
 
-3 .envファイル作成（touch .envにてファイル作成後、以下項目を更新）
+3 .envファイル作成（cp .env.example .envにてファイル作成後、以下項目を更新）
+
+DB_HOST=mysql
 
 DB_DATABASE=laravel_db
 
@@ -54,13 +54,17 @@ DB_PASSWORD=laravel_pass
 
 MAIL_FROM_ADDRESS=info@example.com
 
-4 migration(docker-compose php artisan migrate(phpコンテナ内）)
+4 key generation (php:artisan key:generate(phpコンテナ内）)
 
-5 seeding(docker-compose php artisan db:seed(phpコンテナ内）)
+5 config clear (php artisan config:clear(phpコンテナ内）)
 
-6 storageリンク作成 (php artisan storage:link(phpコンテナ内）)
+6 migration(php artisan migrate(phpコンテナ内）)
 
-7 src/storage/app/publicに、以下URLの３フォルダを格納
+7 seeding(php artisan db:seed(phpコンテナ内）)
+
+8 storageリンク作成 (php artisan storage:link(phpコンテナ内）)
+
+9 src/storage/app/publicに、以下URLの３フォルダを格納
 
 https://drive.google.com/drive/folders/1SdU_ij84sd77fgcL6iNAKMYtQVPHKbuq?usp=sharing
 
