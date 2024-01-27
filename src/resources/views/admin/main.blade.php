@@ -11,7 +11,7 @@
 @endif
 
 @if ( session('message'))
-<div><p>{{ session('message') }}</p></div>
+<div><p class='action_message'>{{ session('message') }}</p></div>
 @endif
 
 <div class='input_form'>
