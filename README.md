@@ -70,7 +70,9 @@ https://drive.google.com/drive/folders/1SdU_ij84sd77fgcL6iNAKMYtQVPHKbuq?usp=sha
 
 #その他(サンプルID(パスワード))
 
-ユーザー：shaftsbury_works@yahoo.co.jp(password)
+ユーザー1：shaftsbury_works@yahoo.co.jp(password)
+
+ユーザー2：2@sample(password)
 
 店鋪代表者：CC_STORE(password)　*/master/loginからログイン
 
