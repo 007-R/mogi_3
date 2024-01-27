@@ -66,6 +66,9 @@ MAIL_FROM_ADDRESS=info@example.com
 https://drive.google.com/drive/folders/1SdU_ij84sd77fgcL6iNAKMYtQVPHKbuq?usp=sharing
 
 #その他(サンプルID(パスワード))
+
 ユーザー：shaftsbury_works@yahoo.co.jp(password)
+
 店鋪代表者：CC_STORE(password)　*/master/loginからログイン
+
 サイト管理者：admin(password)　*/admin/loginからログイン
