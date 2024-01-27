@@ -32,7 +32,6 @@ http://127.0.0.1
 店舗代表者機能
 
 #ER図
-![Alt text](image.png)
 
 
 #使用技術
