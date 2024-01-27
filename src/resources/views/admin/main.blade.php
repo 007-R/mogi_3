@@ -29,7 +29,7 @@
                     <button type='submit'>削除</button>
                     </form></td>
                 <td>
-                    <form class='message' method='post' action='/admin/mail'>
+                    <form class='mail_message' method='post' action='/admin/mail'>
                     @csrf
                     <input type='hidden' name='name' value='{{$user -> name}}'>
                     <input type='hidden' name='email' value='{{$user -> email}}'>
