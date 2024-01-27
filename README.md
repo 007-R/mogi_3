@@ -9,6 +9,12 @@
 #アプリケーションURL:
 http://127.0.0.1
 
+
+![image](https://github.com/007-R/mogi_3/assets/66697562/a84ac8bc-59d5-4851-bf36-3ed471758e27)
+
+![image](https://github.com/007-R/mogi_3/assets/66697562/bae880a7-a8fb-4d57-83c1-4d0f3cf5266b)
+
+
 #機能一覧
 会員登録
 ログイン
@@ -32,6 +38,8 @@ http://127.0.0.1
 店舗代表者機能
 
 #ER図
+<img width="971" alt="ER" src="https://github.com/007-R/mogi_3/assets/66697562/b940ef22-a1bf-42e2-8efb-e9a7e2dcf794">
+
 
 
 #使用技術
