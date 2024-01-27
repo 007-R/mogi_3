@@ -31,6 +31,10 @@ http://127.0.0.1
 管理者機能
 店舗代表者機能
 
+#ER図
+![Alt text](image.png)
+
+
 #使用技術
 laravel8.83.27
 
