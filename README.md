@@ -40,6 +40,8 @@ http://127.0.0.1
 #ER図
 <img width="971" alt="ER" src="https://github.com/007-R/mogi_3/assets/66697562/b940ef22-a1bf-42e2-8efb-e9a7e2dcf794">
 
+#テーブル仕様書
+![image](https://github.com/007-R/mogi_3/assets/66697562/b4843a44-590c-4f4d-b022-58ae45a21b60)
 
 
 #使用技術
