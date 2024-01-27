@@ -41,7 +41,15 @@ http://127.0.0.1
 <img width="971" alt="ER" src="https://github.com/007-R/mogi_3/assets/66697562/b940ef22-a1bf-42e2-8efb-e9a7e2dcf794">
 
 #テーブル仕様書
+
 ![image](https://github.com/007-R/mogi_3/assets/66697562/b4843a44-590c-4f4d-b022-58ae45a21b60)
+
+![image](https://github.com/007-R/mogi_3/assets/66697562/59576a8d-1afa-4b15-9e3e-bd17757cc8c5)
+
+![image](https://github.com/007-R/mogi_3/assets/66697562/f3ade0ab-0b6b-4f1c-9451-44f26bdb9138)
+
+![image](https://github.com/007-R/mogi_3/assets/66697562/9d0fd521-8bbb-466a-9052-ec2a8597606e)
+
 
 
 #使用技術
