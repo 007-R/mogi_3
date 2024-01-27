@@ -1,15 +1,12 @@
 # mogi_3
 
 #アプリケーション名
-
 メルカリ風アプリ
 
 #目的
-
 商品の出品及び購入
 
 #アプリケーションURL
-
 http://127.0.0.1
 
 #機能一覧
@@ -37,6 +34,10 @@ http://127.0.0.1
 #使用技術
 laravel8.83.27
 
+#環境構築
+
+(git clone command)
+git clone -b submission git@github.com:007-R/mogi_3.git
 
 1 docker環境構築（docker-compose up -d --build）
 
@@ -47,11 +48,8 @@ laravel8.83.27
 DB_HOST=mysql
 
 DB_DATABASE=laravel_db
-
 DB_USERNAME=laravel_user
-
 DB_PASSWORD=laravel_pass
-
 MAIL_FROM_ADDRESS=info@example.com
 
 4 key generation (php:artisan key:generate(phpコンテナ内）)
@@ -65,13 +63,9 @@ MAIL_FROM_ADDRESS=info@example.com
 8 storageリンク作成 (php artisan storage:link(phpコンテナ内）)
 
 9 src/storage/app/publicに、以下URLの３フォルダを格納
-
 https://drive.google.com/drive/folders/1SdU_ij84sd77fgcL6iNAKMYtQVPHKbuq?usp=sharing
 
 #その他(サンプルID(パスワード))
-
 ユーザー：shaftsbury_works@yahoo.co.jp(password)
-
 店鋪代表者：CC_STORE(password)　*/master/loginからログイン
-
 サイト管理者：admin(password)　*/admin/loginからログイン
